@@ -1,0 +1,43 @@
+数据库-----------NJLorder
+表1（customer）
+id
+微信号(20)
+姓名(8)
+联系方式（手机号）(15)
+预约日期(23)
+订房（一期简单（是或否）--选择--二期完成）(30)
+是否就餐（日期-是或否-早中晚）（一期简单（是或否）--选择--二期完成）(100)
+备注(100)
+
+{
+create table customer
+(id int primary key auto_increment,
+wechatid varchar(20),
+name varchar(8),
+mobile varchar(15),
+startdate varchar(10),
+enddate varchar(10),
+orderroom varchar(30),
+repast varchar(100),
+remarks varchar(100)
+)charset utf8;
+}
+
+添加微信号为唯一标识，不可重复(如果有重复，就说明有第二次预约，)
+alter table customer add constraint wechatid_uk unique(wechatid);
+
+表2（service）
+id
+日期（0000-01-01）(10)
+房间号：001（0为未订，1为已订）(4)
+002(1)
+003(1)
+004(1)
+005(1)
+006(1)
+007(1)
+就餐数：001（0为未订，1为早饭，2为中饭，3为晚饭）(3)
+002(3)
+003(3)
+004(3)
+005(3)

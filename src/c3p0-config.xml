@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<c3p0-config>
+	<!-- c3p0配置文件 -->
+	<!-- 
+	<named-config name="njlpro"> 
+    <property name="user">446d3643052d4fa7a586a81915a03acb</property>
+    <property name="password">00402c80003441b3927a3006046d8ec1</property>
+    <property name="driverClass">com.mysql.jdbc.Driver</property>
+    <property name="jdbcUrl">jdbc:mysql://sqld.duapp.com:4050/XALoLkcFyerOoEiHUeid</property>
+     -->
+	 
+  	<named-config name="njlpro"> 
+    <property name="user">root</property>
+    <property name="password">Cddd</property>
+    <property name="driverClass">com.mysql.jdbc.Driver</property>
+    <property name="jdbcUrl">jdbc:mysql://localhost:3306/njlorder</property>
+    
+     
+    
+    
+    <!--当连接池中的连接耗尽的时候c3p0一次同时获取的连接数-->
+    <property name="acquireIncrement">5</property>
+    <!-- 初始化数据库连接池时连接的数量 -->
+    <property name="initialPoolSize">10</property>
+    <!-- 数据库连接池中的最小的数据库连接数 -->
+    <property name="minPoolSize">10</property>
+    <!-- 数据库连接池中的最大的数据库连接数 -->
+    <property name="maxPoolSize">50</property>
+	
+	<!--JDBC的标准参数，用以控制数据源内加载的PreparedStatements数量。但由于预缓存的statements
+	属于单个connection而不是整个连接池。所以设置这个参数需要考虑到多方面的因素。
+	如果maxStatements与maxStatementsPerConnection均为0，则缓存被关闭。Default: 0-->
+    <property name="maxStatements">20</property> 
+    <!--maxStatementsPerConnection定义了连接池内单个连接所拥有的最大缓存statements数。Default: 0 -->
+    <property name="maxStatementsPerConnection">5</property>
+  </named-config>
+</c3p0-config>
